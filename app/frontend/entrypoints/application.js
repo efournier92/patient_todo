@@ -1,17 +1,21 @@
 import { createApp } from 'vue/dist/vue.esm-bundler'
+import App from './App.vue'
+
+// const app = createApp({  
+//   data() {  
+//     return {  
+//       course: 'Intro to Vue 3 and Rails'  
+//     }  
+//   }  
+// })
+
+// app.component('App', App)
   
-import ButtonCounter from '../components/ButtonCounter.vue'
-  
-const app = createApp({  
-  data() {  
-    return {  
-      course: 'Intro to Vue 3 and Rails'  
-    }  
-  }  
-})  
-  
-app.component('ButtonCounter', ButtonCounter)  
-  
-app.mount('#app');  
+// app.mount('#app');
+
+createApp(App)
+    .mount('#app')
+
 // (optional) for debug purpose  
-console.log("app", app);  
+// console.log("app", app)
+
