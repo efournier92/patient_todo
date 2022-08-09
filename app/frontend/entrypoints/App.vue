@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker" @show-add-task="showAddTask" />
     <!-- <router-view></router-view> -->
     <Home />
     <!-- <Footer /> -->

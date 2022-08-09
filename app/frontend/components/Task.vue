@@ -1,11 +1,11 @@
 <template>
     <div>
-        <div @dblclick="onToggleReminder(task)" :class="['task', task.reminder ? 'reminder' : '']" >
+        <div @dblclick="onToggleReminder(task)" :class="['task', task.shouldRemind ? 'reminder' : '']" >
             <h3>
-                {{ task.text }}
+                {{ task.description }}
                 <i @click="onDelete(task)" class="fas fa-times"></i>
             </h3>
-            <p>{{ task.day }}</p>
+            <p>{{ task.time }}</p>
         </div>
     </div>
 </template>
@@ -36,7 +36,7 @@
         color: red;
     }
     .task {
-        background: #f4f4f4;
+        background: #F5F5F5;
         border-radius: 10px;
         margin: 1em;
         padding: 10px 20px;
@@ -44,7 +44,7 @@
     }
 
     .task.reminder {
-        border-left: 5px solid green
+        border-left: 14px solid #00C853
     }
 
     .task h3 {

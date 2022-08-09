@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
 
-Things you may want to cover:
+## Versions
 
-* Ruby version
+### Ruby
 
-* System dependencies
+### Rails
 
-* Configuration
+### Vue.JS
 
-* Database creation
+## DB
 
-* Database initialization
+### Creation
 
-* How to run the test suite
+### Initialization
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Resources
+- https://techviewleo.com/install-postgresql-on-arch-manjaro-garuda-linux/
+- https://www.bootrails.com/blog/ruby-on-rails-and-vuejs-tutorial/
+- https://www.youtube.com/watch?v=qZXt1Aom3Cs
+- https://levelup.gitconnected.com/7-steps-to-create-an-api-in-rails-2f984c7c4286

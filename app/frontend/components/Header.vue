@@ -1,8 +1,8 @@
 <template>
-    <header>
-        <h1>{{ title }}</h1>
-        <Button @click="showAddTask" color="green" />
-    </header>
+    <header>{{ title }}</header>
+    <div class="button-container">
+        <Button @click="showAddTask" :iconClass="getIconClass()" diameter="50px" backgroundColor="white" textColor="green" />
+    </div>
 </template>
 
 <script>
@@ -12,6 +12,7 @@
         title: 'Header',
         props: {
             title: String,
+            shouldShowAddTask: Boolean,
         },
         components: {
             Button,
@@ -19,6 +20,11 @@
         methods: {
             showAddTask() {
                 this.$emit('show-add-task')
+            },
+            getIconClass() {
+                return this.shouldShowAddTask
+                    ? 'fa-solid fa-minus'
+                    : 'fa-solid fa-plus'
             }
         },
         emits: [
@@ -30,7 +36,15 @@
 <style scoped>
     header {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         margin-bottom: 20px;
+        color: #00C853;
+        font-size: 4em;
+        font-weight: bold;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: end;
     }
 </style>
