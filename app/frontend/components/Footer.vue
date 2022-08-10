@@ -1,17 +1,24 @@
 <template>
-    <footer>
-        <p>Copyright &copy; 2022</p>
-        <!-- <router-link to="/about">About</router-link> -->
+    <footer class="color-primary">
+        <p>&copy; {{ getYear() }}</p>
     </footer>
 </template>
 
-<style scoped>
-    a {
-        color: #333;
-    }
+<script>
+export default {
+    name: 'Footer',
+    methods: {
+        getYear() {
+            const date = new Date()
+            return date.getFullYear()
+        }
+    },
+}
+</script>
 
-    footer {
-        margin-top: 30px;
-        text-align: center;
-    }
+<style scoped>
+footer {
+    margin-top: 30px;
+    text-align: center;
+}
 </style>

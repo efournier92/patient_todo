@@ -1,24 +1,19 @@
 <template>
   <div class="container">
-    <!-- <router-view></router-view> -->
-    <Home />
-    <!-- <Footer /> -->
+    <TasksOverview />
+    <Footer />
   </div>
 </template>
 
 <script>
-import Header from '../components/Header.vue'
+import TasksOverview from '../components/TasksOverview.vue'
 import Footer from '../components/Footer.vue'
-import Tasks from '../components/Tasks.vue'
-import Home from '../views/Home.vue'
 
 export default {
   name: 'App',
   components: {
-    Header,
     Footer,
-    Tasks,
-    Home
+    TasksOverview,
 },
 }
 </script>
@@ -31,5 +26,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.color-primary {
+  color: #F06292;
 }
 </style>

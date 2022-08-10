@@ -1,16 +1,24 @@
 <template>
-    <Header title="TODO" :shouldShowAddTask="shouldShowAddTask" @show-add-task="toggleAddTask" />
-    <AddTask @save-task="addTask" v-if="shouldShowAddTask" />
-    <Tasks :tasks="tasks" @delete-task="deleteTask" @toggle-reminder="toggleReminder" />
+    <Header title="Patient To Do" />
+    <Transition>
+        <AddTask @save-task="addTask" v-if="shouldShowAddTask" />
+    </Transition>
+    <Tasks
+        :tasks="tasks"
+        :shouldShowAddTask="shouldShowAddTask"
+        @delete-task="deleteTask"
+        @show-add-task="toggleAddTask"
+        @toggle-reminder="toggleReminder"
+    />
 </template>
 
 <script>
-import Tasks from '../components/Tasks.vue'
-import AddTask from '../components/AddTask.vue'
-import Header from '../components/Header.vue'
+import Tasks from './Tasks.vue'
+import AddTask from './AddTask.vue'
+import Header from './Header.vue'
 
 export default {
-    name: 'Home',
+    name: 'TasksOverview',
     components: {
         Tasks,
         AddTask,
@@ -87,3 +95,22 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.v-enter-active {
+    animation: bounce-in 0.3s;
+}
+
+.v-leave-active {
+    animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+</style>
