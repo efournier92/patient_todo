@@ -2,10 +2,10 @@
 
 one:
   description: MyString
-  time: MyString
+  week: 1
   shouldRemind: false
 
 two:
   description: MyString
-  time: MyString
+  week: 1
   shouldRemind: false

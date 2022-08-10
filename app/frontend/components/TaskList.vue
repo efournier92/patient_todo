@@ -8,7 +8,7 @@
             textColor="#f06292"
         />
     </div>
-    <div :key="task.id" v-for="task in sortTasks(tasks)">
+    <div :key="task.id" v-for="task in tasks">
         <Task @delete-task="onDelete(task)" @toggle-reminder="onToggleReminder(task)" :task="task" />
     </div>
 </template>
@@ -37,9 +37,6 @@ export default {
         },
         showAddTask() {
             this.$emit('show-add-task')
-        },
-        sortTasks() {
-            return this.tasks.sort((a, b) => a.time.localeCompare(b.time))
         },
     },
     components: {

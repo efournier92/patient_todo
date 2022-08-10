@@ -10,8 +10,8 @@
             />
         </div>
         <div class="form-control">
-            <label>Day & Time</label>
-            <input v-model="time" type="description" name="time" placeholder="Add Day & Time" />
+            <label>Week</label>
+            <input v-model="week" type="number" name="week" placeholder="Week Number" />
         </div>
         <div class="form-control">
             <label>Set Reminders</label>
@@ -48,7 +48,7 @@ export default {
     data() {
         return {
             description: '',
-            time: '',
+            week: '',
             shouldRemind: false,
         }
     },
@@ -56,14 +56,14 @@ export default {
         saveTask(e) {
             e.preventDefault()
 
-            if (!this.description || !this.time) {
+            if (!this.description || !this.week) {
                 alert("Please fill out all form fields.")
                 return
             }
 
             const task = {
                 description: this.description,
-                time: this.time,
+                week: this.week,
                 shouldRemind: this.shouldRemind,
             }
 
@@ -118,19 +118,4 @@ export default {
     display: flex;
     justify-content: center;
 }
-/* 
-    .form-control-check {
-        display: flex;
-        align-items: start;
-        justify-content: start;
-    }
-
-    .form-control-check label {
-        flex: 1;
-    }
-
-    .form-control-check input {
-        flex: 2;
-        height: 20px;
-    } */
 </style>

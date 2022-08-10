@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     end
 
     def create
-        @tasks = Task.create(description: params[:description], time: params[:time], shouldRemind: params[:shouldRemind])
+        @tasks = Task.create(description: params[:description], week: params[:week], shouldRemind: params[:shouldRemind])
         
         render json: @tasks
     end
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
     def update
         @task = Task.find(params[:id])
-        @task.update(description: params[:description], time: params[:time], shouldRemind: params[:shouldRemind])
+        @task.update(description: params[:description], week: params[:week], shouldRemind: params[:shouldRemind])
         
         render json: "Task #{@task.id} updated successfully!"
     end

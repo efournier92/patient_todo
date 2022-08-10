@@ -47,6 +47,6 @@ rails s
 
 ## References
 - [Vue JS Crash Course](https://www.youtube.com/watch?v=qZXt1Aom3Cs)
-- [Ruby-on-Rails with VueJS Tutorial](https://www.bootrails.com/blog/ruby-on-rails-and-vuejs-tutorial/)
 - [Create an API in Rails](https://levelup.gitconnected.com/7-steps-to-create-an-api-in-rails-2f984c7c4286)
+- [Ruby-on-Rails with VueJS Tutorial](https://www.bootrails.com/blog/ruby-on-rails-and-vuejs-tutorial/)
 - [Install PostgreSQL 14](https://techviewleo.com/install-postgresql-on-arch-manjaro-garuda-linux/)

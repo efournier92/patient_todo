@@ -3,12 +3,16 @@
         <div
             @dblclick="onToggleReminder(task)"
             :class="['task', task.shouldRemind ? 'reminder' : '']"
-        >
+        >   
+            <p>
+                Week #{{ task.week }}
+                <div class="task-check-button">
+                    <i @click="onDelete(task)" class="fas fa-check color-primary"></i>
+                </div>
+            </p>
             <h3>
                 {{ task.description }}
-                <i @click="onDelete(task)" class="fas fa-times color-primary"></i>
             </h3>
-            <p>{{ task.time }}</p>
         </div>
     </div>
 </template>
@@ -34,10 +38,7 @@ export default {
 }
 </script>
 
-<style>
-.fas {
-    color: red;
-}
+<style scoped>
 .task {
     background: #f5f5f5;
     border-radius: 10px;
@@ -47,18 +48,24 @@ export default {
 }
 
 .task.reminder {
-    border-left: 14px solid #F06292;
+    border-left: 14px solid #f06292;
 }
 
 .task h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: start;
 }
 
 .task p {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.task-check-button {
+    text-align: end;
+    font-size: 2em;
 }
 </style>

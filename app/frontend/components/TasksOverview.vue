@@ -1,5 +1,5 @@
 <template>
-    <Header title="Patient To Do" />
+    <Header title="Pregnancy To Do" />
     <Transition>
         <AddTask @save-task="addTask" v-if="shouldShowAddTask" />
     </Transition>
@@ -34,16 +34,19 @@ export default {
         async getTask(id) {
             const res = await fetch(`tasks/${id}`)
 
-            const data = await res.json();
+            const tasks = await res.json();
 
-            return data
+            return this.sortTasks(tasks)
         },
         async getTasks() {
             const res = await fetch("tasks")
 
-            const data = await res.json();
+            const tasks = await res.json();
 
-            return data
+            return this.sortTasks(tasks)
+        },
+        sortTasks(tasks) {
+            return tasks.sort((a, b) => a.week - b.week)
         },
         async addTask(task) {
             const res = await fetch('tasks', {
@@ -58,10 +61,12 @@ export default {
 
             this.tasks.push(data)
 
+            this.tasks = this.sortTasks(this.tasks)
+
             this.shouldShowAddTask = false
         },
         async deleteTask(taskToDelete) {
-            if (confirm(`Are you sure you want to delete: ${taskToDelete.description}?`)) {
+            if (confirm(`Are you have completed: ${taskToDelete.description}?`)) {
                 const res = await fetch(`tasks/${taskToDelete.id}`, {
                     method: 'DELETE',
                     headers: {
@@ -78,7 +83,7 @@ export default {
         async toggleReminder(task) {
             task.shouldRemind = !task.shouldRemind
 
-            const res = await fetch(`tasks/${task.id}`, {
+            await fetch(`tasks/${task.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json',
@@ -91,7 +96,8 @@ export default {
         },
     },
     async created() {
-        this.tasks = await this.getTasks()
+        const tasks = await this.getTasks()
+        this.tasks = this.sortTasks(tasks)
     }
 }
 </script>
