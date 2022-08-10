@@ -26,5 +26,5 @@ task15 = Task.create(description: "Start seeing doctor every two weeks.", time: 
 task16 = Task.create(description: "Eat foods rich in iron.", time: "Week 31", shouldRemind: false)
 task17 = Task.create(description: "Start seeing doctor weekly through delivery.", time: "Week 32", shouldRemind: true)
 task18 = Task.create(description: "Get tested for Group B strep (GBS).", time: "Week 34", shouldRemind: true)
-task19 = Task.create(description: "Do squats to help prepare for labor.", time: "Week 42", shouldRemind: false)
+task19 = Task.create(description: "Do squats to help prepare for labor.", time: "Week 40", shouldRemind: false)
 task20 = Task.create(description: "Deliver baby.", time: "Week 42", shouldRemind: true)

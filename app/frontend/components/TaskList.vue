@@ -8,7 +8,7 @@
             textColor="#f06292"
         />
     </div>
-    <div :key="task.id" v-for="task in tasks">
+    <div :key="task.id" v-for="task in sortTasks(tasks)">
         <Task @delete-task="onDelete(task)" @toggle-reminder="onToggleReminder(task)" :task="task" />
     </div>
 </template>
@@ -18,7 +18,7 @@ import Task from './Task.vue'
 import Button from './Button.vue'
 
 export default {
-    name: 'Tasks',
+    name: 'TaskList',
     props: {
         tasks: Array,
         shouldShowAddTask: Boolean,
@@ -37,6 +37,9 @@ export default {
         },
         showAddTask() {
             this.$emit('show-add-task')
+        },
+        sortTasks() {
+            return this.tasks.sort((a, b) => a.time.localeCompare(b.time))
         },
     },
     components: {

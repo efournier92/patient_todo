@@ -3,7 +3,7 @@
     <Transition>
         <AddTask @save-task="addTask" v-if="shouldShowAddTask" />
     </Transition>
-    <Tasks
+    <TaskList
         :tasks="tasks"
         :shouldShowAddTask="shouldShowAddTask"
         @delete-task="deleteTask"
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import Tasks from './Tasks.vue'
+import TaskList from './TaskList.vue'
 import AddTask from './AddTask.vue'
 import Header from './Header.vue'
 
 export default {
     name: 'TasksOverview',
     components: {
-        Tasks,
+        TaskList,
         AddTask,
         Header,
     },

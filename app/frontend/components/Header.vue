@@ -15,7 +15,7 @@ export default {
 header {
     display: flex;
     justify-content: center;
-    margin-botom: 20px;
+    margin-bottom: 20px;
     font-size: 3em;
     font-weight: bold;
 }

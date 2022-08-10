@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     end
 
     def create
-        @tasks = Task.create(description: params[:description], time: params[:time], shouldRemind: [:shouldRemind])
+        @tasks = Task.create(description: params[:description], time: params[:time], shouldRemind: params[:shouldRemind])
         
         render json: @tasks
     end
