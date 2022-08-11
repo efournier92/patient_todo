@@ -8,7 +8,7 @@
 
 Task.destroy_all
 
-task1 = Task.create(description: "Start taking a prenatal vitamins.", week: 1, shouldRemind: false)
+task1 = Task.create(description: "Start taking a prenatal vitamins.", week: 2, shouldRemind: false)
 task2 = Task.create(description: "Talk to doctor about safe medications during pregnancy.", week: 2, shouldRemind: false)
 task3 = Task.create(description: "Buy an at-home pregnancy test.", week: 3, shouldRemind: true)
 task4 = Task.create(description: "Make an appointment to see doctor to confirm pregnancy.", week: 4, shouldRemind: true)
